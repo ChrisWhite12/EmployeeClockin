@@ -1,0 +1,22 @@
+<h1>Create employee</h1>
+
+<form action = "<%=create_employee_path%>" method = "POST">
+    <input type="hidden" value="<%=form_authenticity_token%>" name="authenticity_token">
+    <div>
+        <label>First Name: </label>
+        <input type="text" name="employee[fname]">
+    </div>
+    <div>
+        <label>Last Name: </label>
+        <input type="text" name="employee[lname]">
+    </div>
+    <div>
+        <label> Hr rate: </label>
+        <input type="number" step="0.01" min="19" max="40" name="employee[hrrate]">
+    </div>
+    <div>
+        <label> Card Status: </label>
+        <p name="card_status"></p>
+    </div>
+    <input type="submit" value="Create">
+</form>

@@ -1,0 +1,6 @@
+<h1>List of reports</h1>
+<ul class="reports_table">
+<% @reports.each{ |report| %>
+    <li>time- <%= report[:created_at] %>, type- <%= report[:report_type] %>, card_id- <%= report[:card_id] %></li>
+<% } %>
+</ul>

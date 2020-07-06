@@ -1,0 +1,45 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ .nav{
+     background-color: rgb(132, 240, 231)
+ }
+ .emp_table{
+    display: grid;
+    grid-template-rows: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 80vw;
+    
+}
+ .FName_col{
+    grid-column: 1/2;
+    border: 2px solid black;
+ }
+ .LName_col{
+     grid-column: 2/3;
+     border: 2px solid black;
+ }
+ .HrRate_col{
+     grid-column: 3/4;
+     border: 2px solid black;
+ }
+ .Link_col{
+     grid-column: 4/5;
+     border: 2px solid black;
+ }
+.table_labels{
+    grid-row: 1/2;
+    background-color: #aaaaaa;
+}
