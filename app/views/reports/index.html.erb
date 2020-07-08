@@ -1,6 +1,9 @@
 <h1>List of reports</h1>
+<div>
+    <input type="date" required pattern="\d{4}-\d{2}-\d{2}">
+</div>
 <ul class="reports_table">
 <% @reports.each{ |report| %>
-    <li>time- <%= report[:created_at] %>, type- <%= report[:report_type] %>, card_id- <%= report[:card_id] %></li>
+    <li>time - <%= report[:report_time] %>, date- <%= report[:report_date] %>, type- <%= report[:report_type] %>, card_id- <%= report[:card_id] %>, employee_id - <%= link_to Employee.find(Card.find(report[:card_id])[:employee_id])[:fname] , "/employees/#{Card.find(report[:card_id])[:employee_id]}"%>, created_at - <%= report[:created_at] %></li>
 <% } %>
 </ul>

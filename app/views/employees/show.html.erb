@@ -1,0 +1,13 @@
+<h1>Show</h1>
+
+<form action = <%=employees_path%> method = "GET">
+    <div>
+        <label>First Name: </label>
+        <p><%= @employee[:fname]%></p>
+    </div>
+    <div>
+        <label>Last Name: </label>
+        <p><%= @employee[:lname]%></p>
+    </div>
+    <input type="submit">
+</form>

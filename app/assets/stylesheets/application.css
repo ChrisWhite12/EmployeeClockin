@@ -19,25 +19,18 @@
  .emp_table{
     display: grid;
     grid-template-rows: 50px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 80vw;
     
 }
  .FName_col{
     grid-column: 1/2;
-    border: 2px solid black;
  }
  .LName_col{
      grid-column: 2/3;
-     border: 2px solid black;
  }
- .HrRate_col{
+ .Edit_col{
      grid-column: 3/4;
-     border: 2px solid black;
- }
- .Link_col{
-     grid-column: 4/5;
-     border: 2px solid black;
  }
 .table_labels{
     grid-row: 1/2;

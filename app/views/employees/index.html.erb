@@ -2,12 +2,10 @@
 <div class="emp_table">
 <p class="FName_col table_labels">First Name</p>
     <p class="LName_col table_labels">Last Name</p>
-    <p class="HrRate_col table_labels">Hr Rate</p>
 <% @employees.each{ |emp| %>
     <p class="FName_col entry_<%= emp[:id]%>" style="grid-row: <%= emp[:id]+1%>/<%= emp[:id]+2%>;"> <%= emp[:fname] %> </p>
     <p class="LName_col entry_<%= emp[:id]%>" style="grid-row: <%= emp[:id]+1%>/<%= emp[:id]+2%>;"> <%= emp[:lname] %> </p>
-    <p class="HrRate_col entry_<%= emp[:id]%>" style="grid-row: <%= emp[:id]+1%>/<%= emp[:id]+2%>;"> <%= emp[:hrrate] %> </p>
-    <p class="Link_col entry_<%= emp[:id]%>" style="grid-row: <%= emp[:id]+1%>/<%= emp[:id]+2%>;"> <%= link_to "Edit Employee", "/employees/#{emp[:id]}/edit" %> </p>
+    <p class="Edit_col entry_<%= emp[:id]%>" style="grid-row: <%= emp[:id]+1%>/<%= emp[:id]+2%>;"> <%= link_to "Edit", "/employees/#{emp[:id]}/edit" %> | <%= link_to "View", "/employees/#{emp[:id]}" %></p>
 <% } %>
 </div>
 <%= link_to "New Employee", new_employee_path %>

@@ -21,7 +21,12 @@ class EmployeesController < ApplicationController
     end 
 
     def show
-        
+        @employee = Employee.find(params[:id])
+        if Card.find_by(employee_id: params[:id])
+            @card = Card.find_by(employee_id: params[:id])[:card_value]
+        else
+            @card = ''
+        end
     end
 
     
@@ -66,5 +71,12 @@ class EmployeesController < ApplicationController
         redirect_to edit_employee_path(params[:id])
     end
 
-    
+    def destroy
+        p "))))))))))"
+        p "DELETE"
+        p "))))))))))"
+        emp_del = Employee.find_by(id: (params[:id]).to_i)
+        emp_del.destroy
+        redirect_to employees_path
+    end
 end

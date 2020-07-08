@@ -2,7 +2,7 @@
 
 <form action = <%=update_employee_path(params[:id])%> method = "POST">
     <input type="hidden" value="<%=form_authenticity_token%>" name="authenticity_token">
-    <input type="hidden" value="_method" value="PATCH">
+    <input type="hidden" name="_method" value="PATCH">
     <div>
         <label>First Name: </label>
         <input type="text" name="employee[fname]" value="<%= @employee[:fname]%>">
@@ -28,6 +28,12 @@
 
 <form action = <%=setcard_path(params[:id])%> method = "POST">
     <input type="hidden" value="<%=form_authenticity_token%>" name="authenticity_token">
-    <input type="hidden" value="_method" value="PATCH">
+    <input type="hidden" name="_method" value="PATCH">
     <input type="submit" value="Set RFID">
+</form>
+
+<form action = <%=delete_employee_path(params[:id])%> method = "POST">
+    <input type="hidden" value="<%=form_authenticity_token%>" name="authenticity_token">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Employee">
 </form>

@@ -15,6 +15,13 @@ for i in 1..10
         card_status: ""]
     )
     puts "created #{i} records \n"
-    pp Employee.all
-
 end
+
+for i in 1..4
+    Card.create(card_value: "CARD#{i}", employee_id: i)
+    for j in 1..5
+        Report.create(report_date: "#{j}/07/2020", report_time: "#{(rand(6..8)).ceil}:00", report_type: "Clock-In", card_id: i)
+        Report.create(report_date: "#{j}/07/2020",report_time: "#{(rand(3..5)).ceil}:00", report_type: "Clock-Out", card_id: i)
+    end
+end
+

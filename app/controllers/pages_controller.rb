@@ -6,14 +6,8 @@ class PagesController < ApplicationController
     end
     
     def main
-
-    end
-
-    def login
-
-    end
-
-    def try_login
-        
+        if(current_user == nil)
+            redirect_to "/users/sign_in"
+        end
     end
 end

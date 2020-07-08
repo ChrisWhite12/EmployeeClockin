@@ -17,6 +17,7 @@ class CardsController < ApplicationController
             r1 = Report.create(report_time: "8:00", report_type: "Clock In", card_id: card_temp[:id])
 
         else
+
             emp_update = Employee.find_by(card_status: "setting")
             p "{{{"
             p emp_update
