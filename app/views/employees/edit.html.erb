@@ -16,6 +16,14 @@
         <input type="number" step="0.01" min="19" max="40" name="employee[hrrate]" value="<%= @employee[:hrrate]%>">
     </div>
     <div>
+        <label>Email: </label>
+        <input type="text" name="employee[email_address]" value="<%= @employee[:email_address]%>">
+    </div>
+    <div>
+        <label>Phone: </label>
+        <input type="text" name="employee[phone]" value="<%= @employee[:phone]%>">
+    </div>
+    <div>
         <label> Card Status: </label>
         <p name="card_status"><%=@employee[:card_status]%></p>
     </div>

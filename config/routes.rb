@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   #show single day
   get "/reports/:id", to: "reports#show"
 
+  #---------------------------------card-------------------------------
   #post card id
   post "/cards/:value/:token", to: "cards#create", as: "create_card"
 end

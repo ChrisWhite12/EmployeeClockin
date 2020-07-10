@@ -1,18 +1,50 @@
-<h1>List of reports</h1>
-<div>
-    <input type="date" class="sel_date" required pattern="\d{4}-\d{2}-\d{2}">
-</div>
-<ul class="reports_table">
-<% @reports.each{ |report| %>
-    <li>time - <%= report[:report_time] %>, date- <%= report[:report_date] %>, type- <%= report[:report_type] %>, card_id- <%= report[:card_id] %>, employee_id - <%= link_to Employee.find(Card.find(report[:card_id])[:employee_id])[:fname] , "/employees/#{Card.find(report[:card_id])[:employee_id]}"%>, created_at - <%= report[:created_at] %></li>
-<% } %>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+</head>
+<body>
+    <div class="main_sec">
+        <div>
+            <input type="date" class="sel_date" required pattern="\d{4}-\d{2}-\d{2}">
+            
+            <select name="employees" id="employee_select">
+                <option value="All">All</option>
+                <% @employees.each{ |employee| %>
+                    <option value=<%= employee[:id] %>> <%= employee[:fname]%> <%= employee[:lname]%> </option>
+                <% } %>
+            </select>
+        </div>
 
-<script>
-console.log("run")
-// $(document).ready ->
-//   $(".sel_date").on('change', function(e){
-//     console.log("Changed")
+        <div class="reports_table">
+            <p class="time_in_col report_labels">Time In</p>
+            <p class="time_out_col report_labels">Time Out</p>
+            <p class="report_type_col report_labels">Report Status</p>
+            <p class="card_value_col report_labels">Card Value</p>
+            <p class="employee_col report_labels">Employee</p>
+            
+            <% @reports.each_with_index{ |report, ind| %>
+                <p class="time_in_col" style="grid-row: <%= ind+2%>/<%= ind+3%>"><%= report[:report_time_in] %> <%= report[:report_date_in] %></p>
+                <p class="time_out_col" style="grid-row: <%= ind+2%>/<%= ind+3%>"><%= report[:report_time_out] %> <%= report[:report_date_out] %></p>
+                <p class="report_type_col" style="grid-row: <%= ind+2%>/<%= ind+3%>"><%= report[:report_type] %></p>
+                <p class="card_value_col" style="grid-row: <%= ind+2%>/<%= ind+3%>"><%= report[:card_id] %></p>
+                <p class="employee_col" style="grid-row: <%= ind+2%>/<%= ind+3%>"><%= link_to Employee.find(Card.find(report[:card_id])[:employee_id])[:fname] , "/employees/#{Card.find(report[:card_id])[:employee_id]}"%></p>
+            <% } %>
+        </div>
 
-//   })
-</script>
+    </div>
+
+    <script>
+    console.log("run")
+    // $(document).ready ->
+    //   $(".sel_date").on('change', function(e){
+    //     console.log("Changed")
+
+    //   })
+    </script>
+</body>
+</html>
+
+

@@ -19,9 +19,12 @@ end
 
 for i in 1..4
     Card.create(card_value: "CARD#{i}", employee_id: i)
+
     for j in 1..5
-        Report.create(report_date: "#{j}/07/2020", report_time: "#{(rand(6..8)).ceil}:00", report_type: "Clock-In", card_id: i)
-        Report.create(report_date: "#{j}/07/2020",report_time: "#{(rand(3..5)).ceil}:00", report_type: "Clock-Out", card_id: i)
+        Report.create(report_date_in: "#{j}/07/2020", report_date_out: "#{j}/07/2020",
+        report_time_in: "#{(rand(6..8)).ceil}:00", report_time_out: "#{(rand(15..17)).ceil}:00",
+        report_type: "Clock-Out", card_id: i)
     end
+    
 end
 

@@ -36,3 +36,41 @@
     grid-row: 1/2;
     background-color: #aaaaaa;
 }
+
+
+.reports_table{
+    display: grid;
+    grid-template-rows: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 80vw;
+    
+}
+ .time_in_col{
+    grid-column: 1/2;
+ }
+ .time_out_col{
+     grid-column: 2/3;
+ }
+ .report_type_col{
+     grid-column: 3/4;
+ }
+ .card_value_col{
+    grid-column: 4/5;
+}
+.employee_col{
+    grid-column: 5/6;
+}
+.report_labels{
+    grid-row: 1/2;
+    background-color: #aaaaaa;
+}
+
+.main_sec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div{
+    margin: 10px 0 ;
+}
